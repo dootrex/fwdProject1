@@ -1,0 +1,181 @@
+@charset "utf-8";
+
+/* Resets */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* Img Reset */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  background-color: #e5c8a8;
+  height: 100%;
+  margin: 0;
+  border: 1px solid blue;
+}
+h1,
+h2,
+h3,
+a {
+  font-family: "Nova Round", cursive;
+  line-height: 2;
+}
+p {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 500;
+  font-size: 1.1em;
+}
+.wrapper {
+  background-color: mediumaquamarine;
+  max-width: 1000px;
+  margin: 0 auto;
+  min-height: 100vh;
+  border: 1px solid red;
+}
+header a {
+  color: white;
+  text-decoration: none;
+}
+
+.top-bar {
+  background-color: black;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 50px auto;
+  align-items: center;
+  grid-template-areas: "logo menu" "nav nav";
+  padding: 10px;
+  margin-top: 0;
+}
+.top-bar h1 {
+  grid-area: logo;
+  color: white;
+  margin: 0 0 0 15px;
+}
+nav {
+  grid-area: nav;
+  display: none;
+  margin: 0 auto;
+  text-align: center;
+}
+nav a {
+  display: block;
+}
+nav a:hover,
+nav a:focus,
+nav a:active {
+  background-color: rgba(255, 255, 255, 0.315);
+}
+nav li {
+  border-bottom: 1px solid gray;
+}
+.nav-active {
+  display: block;
+}
+.burger {
+  grid-area: menu;
+  cursor: pointer;
+  margin: auto;
+}
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px;
+}
+
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+.toggle .line2 {
+  opacity: 0;
+}
+.toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+/* Main */
+main {
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.hero {
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+.teaser {
+  background-color: white;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border: 1px dotted red;
+}
+.teaser h2 {
+  text-align: center;
+  font-size: 1.7em;
+  margin: 0.7em 0;
+}
+.teaser figure {
+  margin: 0;
+}
+.teaser p {
+  margin: 10px;
+  margin-bottom: 0;
+}
+footer {
+  background-color: #b3670a;
+  color: white;
+  padding: 20px;
+}
+
+footer a {
+  color: white;
+}
+
+@media (min-width: 650px) {
+  .burger {
+    display: none;
+  }
+  .top-bar {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "logo nav";
+  }
+
+  nav {
+    display: block;
+  }
+
+  nav ul {
+    display: flex;
+  }
+
+  nav li {
+    flex: 1;
+    margin: 0 1em;
+    border: none;
+  }
+
+  nav a {
+    padding: 0;
+    text-align: center;
+  }
+  .teasers {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .teaser {
+    width: 48%;
+  }
+  .teaser:last-child {
+    margin: 20px auto;
+  }
+}
