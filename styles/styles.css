@@ -21,7 +21,6 @@ body {
   background-color: #e5c8a8;
   height: 100%;
   margin: 0;
-  border: 1px solid blue;
 }
 h1,
 h2,
@@ -40,7 +39,6 @@ p {
   max-width: 1000px;
   margin: 0 auto;
   min-height: 100vh;
-  border: 1px solid red;
 }
 header a {
   color: white;
@@ -56,6 +54,8 @@ header a {
   grid-template-areas: "logo menu" "nav nav";
   padding: 10px;
   margin-top: 0;
+  position: fixed;
+  width: 100%;
 }
 .top-bar h1 {
   grid-area: logo;
@@ -116,7 +116,6 @@ main {
   background-color: white;
   margin-bottom: 20px;
   padding-bottom: 20px;
-  border: 1px dotted red;
 }
 .teaser h2 {
   text-align: center;
@@ -125,6 +124,11 @@ main {
 }
 .teaser figure {
   margin: 0;
+}
+.teaser figure img {
+  object-fit: cover;
+  width: 100%;
+  height: 300px;
 }
 .teaser p {
   margin: 10px;
@@ -139,6 +143,28 @@ footer {
 footer a {
   color: white;
 }
+.teaser-horizontal {
+  background-color: white;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+.teaser-horizontal h2 {
+  text-align: center;
+  font-size: 1.7em;
+  margin: 0.7em 0;
+}
+.teaser-horizontal figure {
+  margin: 0;
+}
+.teaser-horizontal p {
+  margin: 10px;
+  margin-bottom: 0;
+}
+.teaser-horizontal figure img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
 
 @media (min-width: 650px) {
   .burger {
@@ -147,6 +173,7 @@ footer a {
   .top-bar {
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "logo nav";
+    position: static;
   }
 
   nav {
@@ -175,7 +202,30 @@ footer a {
   .teaser {
     width: 48%;
   }
+  .teaser img {
+    height: 400px;
+    width: 100%;
+  }
   .teaser:last-child {
     margin: 20px auto;
+  }
+  .teaser-horizontal {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+  }
+  .teaser-horizontal h2 {
+    margin: 0;
+  }
+  .teaser-horizontal figure {
+    flex-basis: 75%;
+    height: 200px;
+  }
+  .teaser-horizontal figure img {
+    height: 100%;
+    object-fit: cover;
+  }
+  .teaser-horizontal:nth-child(2) {
+    flex-direction: row-reverse;
   }
 }
